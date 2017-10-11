@@ -20,18 +20,25 @@
 //         }
 //     });
 // });
-var MongoClient = require('mongodb').MongoClient,
-    test = require('assert');
-// Connection url
-var url = 'mongodb://localhost:27017';
-// Connect using MongoClient
-MongoClient.connect(url, function(err, db) {
+// var MongoClient = require('mongodb').MongoClient,
+//     test = require('assert');
+// // Connection url
+// var url = 'mongodb://localhost:27017';
+// // Connect using MongoClient
+// MongoClient.connect(url, function(err, db) {
 
-    // var col = db.collection('hw1');
-    if (err) {
-        console.log("fail");
-    } else {
-        console.log("success!!");
-    }
+//     // var col = db.collection('hw1');
+//     if (err) {
+//         console.log("fail");
+//     } else {
+//         console.log("success!!");
+//     }
 
-});
+// });
+var http = require('http');
+
+//create a server object:
+http.createServer(function(req, res) {
+    res.write('Hello World!'); //write a response to the client
+    res.end(); //end the response
+}).listen(process.env.PORT); //the server object listens on port 8080
